@@ -1,9 +1,10 @@
 from django.urls import path
 from django.views.generic import RedirectView
 
-from .views import polls_index
+from . import views
 
 urlpatterns = [
     path('', RedirectView.as_view(url='/polls/')),
-    path('polls/', polls_index),
+    path('polls/', views.polls_index),
+    path('polls/<int:question_id>/', views.polls_show),
 ]

@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Polls App</title>
+    <title>Polls - Question</title>
 </head>
 
 <body>
-    <ul id="polls">
-        {% for question in questions %}
-        <li>
-            <a href="/polls/{{ question.id }}">{{ question.question_text }}</a>
-        </li>
+    <h2 id="poll-question">{{ question.question_text }}</h2>
+
+    <ul id="choices">
+        {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
         {% endfor %}
     </ul>
 </body>
