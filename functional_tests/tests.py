@@ -48,7 +48,7 @@ class PollsTest(LiveServerTestCase):
         self.assertTrue(
             self.browser.find_element_by_css_selector('h2#poll-question').text)
         self.assertTrue(
-            self.browser.find_element_by_css_selector('ul#choices').text)
+            self.browser.find_elements_by_css_selector('ul#choices'))
 
         self.fail('Finish the tests!')
         # He chose the second answer and submitted his choice
